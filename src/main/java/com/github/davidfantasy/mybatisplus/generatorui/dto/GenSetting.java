@@ -2,8 +2,8 @@ package com.github.davidfantasy.mybatisplus.generatorui.dto;
 
 import lombok.Data;
 
+import java.io.File;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 定义生成代码时每次可能发生变化的一些配置项目
@@ -19,12 +19,12 @@ public class GenSetting {
     /**
      * 文件存在时是否覆盖
      */
-    private boolean override;
+    private boolean override = true;
 
     /**
      * 注释的作者
      */
-    private String author;
+    private String author = "chen";
 
     /**
      * 功能模块名
@@ -39,6 +39,6 @@ public class GenSetting {
     /**
      * 目标项目根目录
      */
-    private String rootPath;
+    private String rootPath = System.getProperty("user.dir") + File.separator;
 
 }

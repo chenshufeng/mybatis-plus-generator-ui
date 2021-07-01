@@ -2,7 +2,7 @@ import com.github.davidfantasy.mybatisplus.generatorui.GeneratorConfig;
 import com.github.davidfantasy.mybatisplus.generatorui.MybatisPlusToolsApplication;
 import com.github.davidfantasy.mybatisplus.generatorui.mbp.NameConverter;
 
-public class TestApplication {
+public class HuomaiApplication {
 
 
     public static void main(String[] args) {
@@ -11,17 +11,9 @@ public class TestApplication {
                 .password("huomai2021xsw2")
                 .port(8068)
                 .driverClassName("com.mysql.cj.jdbc.Driver")
-                .basePackage("com.example")
+                .basePackage("com.huomai")
                 .nameConverter(new NameConverter() {
-                    @Override
-                    public String serviceNameConvert(String tableName) {
-                        return this.entityNameConvert(tableName) + "Service";
-                    }
 
-                    @Override
-                    public String controllerNameConvert(String tableName) {
-                        return this.entityNameConvert(tableName) + "Action";
-                    }
                 })
                 .build();
         MybatisPlusToolsApplication.run(config);

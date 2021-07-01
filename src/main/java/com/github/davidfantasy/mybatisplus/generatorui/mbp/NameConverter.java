@@ -12,6 +12,21 @@ import static com.github.davidfantasy.mybatisplus.generatorui.dto.Constant.DOT_X
  */
 public interface NameConverter {
 
+    /***
+     * @description: 自定义Entity.java的类名称
+     * @author chenshufeng
+     * @date: 2021/7/1 8:27 下午
+     */
+    default String entityNameConvert(String tableName, boolean ignoreTablePrev) {
+        if (Strings.isNullOrEmpty(tableName)) {
+            return "";
+        }
+        if (ignoreTablePrev) {
+            tableName = tableName.substring(tableName.indexOf(StrUtil.UNDERLINE) + 1, tableName.length());
+        }
+        return StrUtil.upperFirst(StrUtil.toCamelCase(tableName.toLowerCase()));
+    }
+
     /**
      * 自定义Entity.java的类名称
      *
@@ -19,11 +34,7 @@ public interface NameConverter {
      * @return
      */
     default String entityNameConvert(String tableName) {
-        if (Strings.isNullOrEmpty(tableName)) {
-            return "";
-        }
-        tableName = tableName.substring(tableName.indexOf(StrUtil.UNDERLINE) + 1, tableName.length());
-        return StrUtil.upperFirst(StrUtil.toCamelCase(tableName.toLowerCase()));
+        return entityNameConvert(tableName, false);
     }
 
     /**

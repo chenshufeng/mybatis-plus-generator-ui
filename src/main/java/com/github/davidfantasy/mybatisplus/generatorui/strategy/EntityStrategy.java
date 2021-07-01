@@ -2,6 +2,7 @@ package com.github.davidfantasy.mybatisplus.generatorui.strategy;
 
 import lombok.Data;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -20,7 +21,7 @@ public class EntityStrategy {
     /**
      * 需要自动填充的字段，格式为 字段名:填充时机 例如：col:update
      */
-    private List<String> tableFills;
+    private List<String> tableFills = Arrays.asList("createBy:insert","createTime:insert","updateBy:update","updateTime:update");
 
     /**
      * 实体是否生成 serialVersionUID
@@ -43,12 +44,12 @@ public class EntityStrategy {
      * -----------------------------------<br>
      * public User setName(String name) { this.name = name; return this; }
      */
-    private boolean entityBuilderModel = false;
+    private boolean entityBuilderModel = true;
     /**
      * 【实体】是否为lombok模型（默认 false）<br>
      * <a href="https://projectlombok.org/">document</a>
      */
-    private boolean entityLombokModel = false;
+    private boolean entityLombokModel = true;
     /**
      * Boolean类型字段是否移除is前缀（默认 false）<br>
      * 比如 : 数据库字段名称 : 'is_xxx',类型为 : tinyint. 在映射实体的时候则会去掉is,在实体类中映射最终结果为 xxx
@@ -73,6 +74,6 @@ public class EntityStrategy {
     /**
      * 开启 swagger2 支持
      */
-    private boolean swagger2 = false;
+    private boolean swagger2 = true;
 
 }

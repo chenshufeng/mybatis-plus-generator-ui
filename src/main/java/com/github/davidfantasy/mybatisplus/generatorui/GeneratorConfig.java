@@ -63,6 +63,11 @@ public class GeneratorConfig {
     private boolean activeRecord = false;
 
     /**
+     * 忽略表前缀
+     */
+    private boolean ignoreTablePrev = false;
+
+    /**
      * 注入自定义模板参数
      */
     private TemplateVaribleInjecter templateVaribleInjecter;

@@ -65,7 +65,7 @@ public class MbpGeneratorService {
                 TemplateType.XML);
         mpg.setTemplate(templateConfig);
         GlobalConfig gc = new GlobalConfig();
-        gc.setOpen(false);
+        gc.setOpen(true);
         gc.setDateType(generatorConfig.getDateType());
         mpg.setGlobalConfig(gc);
         mpg.setTemplateEngine(beetlTemplateEngine);

@@ -11,7 +11,7 @@ public class HuomaiApplication {
                 .password("huomai2021xsw2")
                 .port(8068)
                 .driverClassName("com.mysql.cj.jdbc.Driver")
-                .basePackage("com.huomai")
+                .basePackage("com.huomai.h")
                 .nameConverter(new NameConverter() {
 
                 })

@@ -67,6 +67,9 @@ public class GeneratorConfig {
      */
     private boolean ignoreTablePrev = false;
 
+    //模块名在前面
+    private boolean moduleInFront = true;
+
     /**
      * 注入自定义模板参数
      */

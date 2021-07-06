@@ -39,6 +39,6 @@ public class GenSetting {
     /**
      * 目标项目根目录
      */
-    private String rootPath = System.getProperty("user.dir") + File.separator;
+    private String rootPath = System.getProperty("HOME") + File.separator;
 
 }

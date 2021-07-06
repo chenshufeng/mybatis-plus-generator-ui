@@ -99,11 +99,22 @@ public class MbpGeneratorService {
         //设置java代码的包名
         PackageConfig pc = new PackageConfig();
         pc.setParent(null);
+
+
         pc.setController(PathUtil.joinPackage(userConfig.getControllerInfo().getOutputPackage(), genSetting.getModuleName()));
         pc.setEntity(PathUtil.joinPackage(userConfig.getEntityInfo().getOutputPackage(), genSetting.getModuleName()));
         pc.setMapper(PathUtil.joinPackage(userConfig.getMapperInfo().getOutputPackage(), genSetting.getModuleName()));
         pc.setService(PathUtil.joinPackage(userConfig.getServiceInfo().getOutputPackage(), genSetting.getModuleName()));
         pc.setServiceImpl(PathUtil.joinPackage(userConfig.getServiceImplInfo().getOutputPackage(), genSetting.getModuleName()));
+
+        if (true) {
+            pc.setController(PathUtil.joinPackage(genSetting.getModuleName(), userConfig.getControllerInfo().getOutputPackage()));
+            pc.setEntity(PathUtil.joinPackage(genSetting.getModuleName(), userConfig.getEntityInfo().getOutputPackage()));
+            pc.setMapper(PathUtil.joinPackage(genSetting.getModuleName(), userConfig.getMapperInfo().getOutputPackage()));
+            pc.setService(PathUtil.joinPackage(genSetting.getModuleName(), userConfig.getServiceInfo().getOutputPackage()));
+            pc.setServiceImpl(PathUtil.joinPackage(genSetting.getModuleName(), userConfig.getServiceImplInfo().getOutputPackage()));
+        }
+
         mpg.setPackageInfo(pc);
         for (String table : tables) {
             //设置各类文件的名称
